@@ -1,1 +1,1 @@
-# Osaka-HTML-Python
+# About Osaka Restaurant HTML & Python

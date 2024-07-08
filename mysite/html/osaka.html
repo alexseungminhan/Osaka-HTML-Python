@@ -13,6 +13,8 @@
         /*document(파일 전체)에서 tag의 id가 op1인 애를 가져와서 op1에 저장해라*/
         var op2 = document.getElementById("op2");
         var selectedOption = document.getElementById("selectedOption");  // 숨겨진 입력 필드
+        var orderOption = document.getElementById("orderOption");  // 숨겨진 입력 필드
+
         if (cur.id === "op1"){ /*op1을 선택(클릭)했을 때*/
             op1.style.color = 'yellow';
             op2.style.color = 'black';
@@ -20,16 +22,19 @@
         }
         else if(cur.id==="op2"){
             op2.style.color = 'yellow';
-            op1.style.color = 'black';   
+            op1.style.color = 'black'; 
+            selectedOption.value = 'Reviews'  
         }
 
         else if(cur.id==="op3"){
             op3.style.color = 'yellow';
             op4.style.color = 'black';   
+            orderOption.value = 'Ascending'
         }
         else{
             op4.style.color = 'yellow';
             op3.style.color = 'black';   
+            orderOption.value = 'Descending'
         }
 
         document.getElementById("optionForm").submit();  // 폼 제출
@@ -126,6 +131,7 @@
                     <p class="sort_op" id="op2" onclick="optionChange(this)">Number of reviews</p> <!--버튼 만들기-->
                 </div>
                 <div class="sort">
+                    <input type="hidden" id="orderOption" name="orderOption" value="">
                     <p class="sort_op2" id="op3" onclick="optionChange(this)">Ascending order</p> <!--버튼 만들기-->
                     <p>/</p>
                     <p class="sort_op2" id="op4" onclick="optionChange(this)">Descending order</p> <!--버튼 만들기-->

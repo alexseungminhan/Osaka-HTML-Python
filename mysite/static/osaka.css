@@ -1,0 +1,99 @@
+body{ /*body태그 가지는 애들 대상으로 */
+    background-color: #d1e6eb; /*전체 백그라운드*/
+}
+
+.title{ /*title이라는 클래스를 가진 애들한테 모두 적용*/
+    width: 100%;
+    height: 20%;
+    font-family: 'Times New Roman';
+    display: flex; /*유연한 디스플레이, 가로로 넣을 때*/
+    justify-content: center; /*가로 정렬을 가운데 정렬*/
+    border-bottom: 3px solid #1e2324; /*밑에만 border주기*/
+
+}
+
+.content{
+    width: 100%; /*content를 가로 100%로 주고 그걸 쪼개기 위함*/
+
+    display: flex; /*가로 배치 가능*/
+}
+
+.result{
+    width: 80%; /*content안에서 가로 80%*/
+    border-bottom: 3px solid #1e2324; /*맨 밑 보더*/
+
+}
+.search_layout{
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center; /*세로 정렬*/
+    border-bottom: 3px solid #1e2324; /*검색창 바로 밑 보더*/
+}
+
+
+
+.filter{
+    width: 20%; /*content안에서 가로 20%*/
+    margin: 4px; /*여백*/
+    border: 3px solid #1e2324; /*경계선*/
+
+    border-radius: 10px; /*경계선 둥글게*/
+}
+
+.check{
+    margin-left: 2px;
+    display: flex;
+}
+
+.search{
+    width: 90%;
+    height: 25px;
+    border: none;
+    background: transparent; /*검색창 투명하게*/
+    margin-left: 5px;
+    outline: none;
+    font-weight: bold; /*볼드체*/
+    
+}
+
+.sort{
+    margin-left: 2px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+h2, h3{ /*h2 태그 가지는 애들 대상, "filter"*/
+    width: 100%;
+    text-align: center;
+    border-top: 2px solid #1e2324;
+    border-bottom: 2px solid #1e2324;
+}
+.sort_op{
+    border: none; /*버튼의 보더 없애기*/
+    background: transparent; /*버튼의 배경색 없애기*/
+}
+.sort_op:hover{ /*클래스가 sort_op인 버튼위에 마우스를 올렸을 때*/
+    color:burlywood;
+}
+.sort_op:focus{ /*클래스가 sort_op인 버튼위에 마우스로 클릭했을 때*/
+    color:red;
+}
+
+.sort_op2{
+    border: none; /*버튼의 보더 없애기*/
+    background: transparent; /*버튼의 배경색 없애기*/
+}
+
+.sort_op2:hover{ 
+    color:burlywood;
+}
+.sort_op2:focus{ 
+    color:red;
+}
+
+.name{
+    color:purple;
+    font-weight: bold;
+}

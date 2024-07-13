@@ -96,7 +96,11 @@
                         <div class="name"><h4>{{data.name}}</h4></div>
             
                         <h4>-{{data.addr}}</h4>
-                        <h4>-Ranking: {{data.ranking}}</h4>
+                        {%if 'Reviews' in data %}
+                        <h4>-Reviews: {{data.Reviews}}</h4>
+                        {% else %}
+                        <h4>-Ranking: {{data.Ranking}}</h4>                       
+                        {% endif %}
                         {% empty %}
                         <li>No users found.</li>
                     {% endfor %}

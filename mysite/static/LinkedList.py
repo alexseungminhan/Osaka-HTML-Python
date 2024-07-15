@@ -24,15 +24,13 @@ class LinkedList():
         cur = self.head
         
         while cur!=None:
-            print(cur)
+            #print(cur)
             cur=cur.next
     
     def find_list(self, search, selectedOption,orderOption,Vegan_option,Vegetarian_friendly,Gluten_free):
-
         search_lower=search.lower()
-        print(selectedOption)
         result = []
-
+        print(len(result))
         cur = self.head
         while cur!=None:
             if search_lower in cur.name.lower():
@@ -42,17 +40,19 @@ class LinkedList():
                 else:
                     selectedOption='Ranking'
                     temp_data = cur.rankingPos
-                '''
-                if Vegan_option=='on' and 'vegan option' not in cur.cur:
+                
+                if Vegan_option=='on' and 'vegan options' not in cur.cur:
                     cur=cur.next
                     continue
-                if Vegetarian_friendly=='on' and 'vegetarian friendly' not in cur.cur:
+                
+                elif Vegetarian_friendly=='on' and 'vegetarian friendly' not in cur.cur:
                     cur=cur.next
                     continue
-                if Gluten_free=='on' and 'gluten free' not in cur.cur:
+                elif Gluten_free=='on' and 'gluten free options' not in cur.cur:
                     cur=cur.next
                     continue
-                '''
+                
+                
 
                 result.append({
                     'name':cur.name,
@@ -65,6 +65,6 @@ class LinkedList():
             result.sort(key=lambda x:x[selectedOption])
         elif orderOption == 'Descending':
             result.sort(key=lambda x:x[selectedOption],reverse=True)
-        
+        #print(f'result ={result}')
         return result
         

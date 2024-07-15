@@ -2,8 +2,10 @@ import pandas as pd
 import os
 from static.LinkedList import LinkedList
 
-list1 = LinkedList()
+
 def init_osaka():
+    global list1
+    list1 = LinkedList()
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     print(os.path.join(BASE_DIR,'static\\osaka_tripadvisor.csv'))
     data = pd.read_csv(os.path.join(BASE_DIR,'static\\osaka_tripadvisor.csv'))
@@ -24,5 +26,6 @@ def init_osaka():
 
     
 def search_osaka(select_info): #검색어가 select_info의 'search'에 있음
+    global list1
     print(select_info)
     return list1.find_list(select_info['search'],select_info['selectedOption'],select_info['orderOption'],select_info['Vegan option'],select_info['Vegetarian friendly'],select_info['Gluten free'])

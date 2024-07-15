@@ -17,6 +17,7 @@ def submit_data(request):
     for name in check_box_values:
         check_box_values[name] = request.POST.get(name)
     context = search.search_osaka(check_box_values)
+    #print(f'context={context}')
     return render(request,"osaka.html",context={'datas':context})
 
 

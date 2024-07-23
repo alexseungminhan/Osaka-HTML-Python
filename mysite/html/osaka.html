@@ -4,18 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tripadvisor's Top 500 Osaka Restaurant</title> <!--tab에 보이는거-->
-    <link rel="stylesheet" type="text/css" href="{% static 'osaka.css' %}"> <!-- osaka css 연동 -->
+    <title>Tripadvisor's Top 500 Osaka Restaurant</title> <!--title-->
+    <link rel="stylesheet" type="text/css" href="{% static 'osaka.css' %}"> <!-- link with osaka.css -->
 </head>
 <script>
     function optionChange(cur){
         var op1 = document.getElementById("op1");
-        /*document(파일 전체)에서 tag의 id가 op1인 애를 가져와서 op1에 저장해라*/
+        /*when you click 'Ranking,' id='op1,' and the info is transferred; line 99*/
+        /*get the ones with 'id=op1' form the whole document(entire file) 
+        and put it in 'var op1'*/
         var op2 = document.getElementById("op2");
-        var selectedOption = document.getElementById("selectedOption");  // 숨겨진 입력 필드
-        var orderOption = document.getElementById("orderOption");  // 숨겨진 입력 필드
+        var selectedOption = document.getElementById("selectedOption");  
+        var orderOption = document.getElementById("orderOption");  
 
-        if (cur.id === "op1"){ /*op1을 선택(클릭)했을 때*/
+        if (cur.id === "op1"){ /*when u click op1*/
             op1.style.color = 'yellow';
             op2.style.color = 'black';
             selectedOption.value = 'Ranking';
@@ -37,13 +39,13 @@
             orderOption.value = 'Descending'
         }
 
-        document.getElementById("optionForm").submit();  // 폼 제출
+        document.getElementById("optionForm").submit();  // submit form
 
     }
 </script>
 <body>
     <div class="title">
-        <h1> <!--가장 큰 타이틀 쓸 때 h1-->
+        <h1> <!--biggest title h1-->
             
             Tripadvisor's Top 500 Osaka Restaurant
         </h1>
@@ -58,8 +60,8 @@
                         
                     <input type ="text" class = "search" name="search" placeholder="Search"/> 
                     
-                    <!--검색창 input text, search클래스-->
-                    <!--placeholder 옅게 글자가 나옴, 클릭하면 글자 사라짐-->
+                    <!--placeholder: make the input in a lighter color; 
+                    when you click it, the input disappears-->
                 </div>
                 <div>
                     {% for data in datas %}
@@ -67,6 +69,7 @@
             
                         <h4>-{{data.addr}}</h4>
                         {%if 'Reviews' in data %}
+                        <!--display 'Reviews' when 'Reviews' is selected-->
                         <h4>-Reviews: {{data.Reviews}}</h4>
                         {% else %}
                         <h4>-Ranking: {{data.Ranking}}</h4>                       
@@ -78,43 +81,38 @@
 
             </div>
 
-
-
-
             <div class="filter">
-                <h2>Filter</h2> <!--h2 타이틀-->
+                <h2>Filter</h2> <!--h2 title-->
                 <div class="check">
-                    <input type ="checkbox" name="Vegan option"/> <!--체크박스형 인풋 "checkbox"-->
+                    <input type ="checkbox" name="Vegan option"/> <!--"checkbox" input-->
                     <p>Vegan option</p>
                 </div>
                 <div class="check">
-                    <input type ="checkbox" name="Vegetarian friendly"/> <!--체크박스형 인풋-->
+                    <input type ="checkbox" name="Vegetarian friendly"/> 
                     <p>Vegetarian friendly</p>
                 </div>
                 <div class="check" >
-                    <input type ="checkbox" name="Gluten free"/> <!--체크박스형 인풋-->
+                    <input type ="checkbox" name="Gluten free"/> 
                     <p>Gluten free</p>
                 </div>
                 <h2>Sort by</h2>
                 <div class="sort">
                     <input type="hidden" id="selectedOption" name="selectedOption" value="">
                     <p class="sort_op" id="op1" onclick="optionChange(this)" name="ranking">Ranking</p> 
-                    <!--버튼 만들기-->
-                    <!--onclick: 버튼 클릭 시 optionChange 함수를 실행시키고 내 정보를 넘겨라-->
+                    <!--button-->
+                    <!--onclick: when button is clicked, execute optionChange function and transfer the info-->
                     <p>/</p>
-                    <p class="sort_op" id="op2" onclick="optionChange(this)">Number of reviews</p> <!--버튼 만들기-->
+                    <p class="sort_op" id="op2" onclick="optionChange(this)">Number of reviews</p> 
                 </div>
                 <div class="sort">
                     <input type="hidden" id="orderOption" name="orderOption" value="">
-                    <p class="sort_op2" id="op3" onclick="optionChange(this)">Ascending order</p> <!--버튼 만들기-->
+                    <p class="sort_op2" id="op3" onclick="optionChange(this)">Ascending order</p> 
                     <p>/</p>
-                    <p class="sort_op2" id="op4" onclick="optionChange(this)">Descending order</p> <!--버튼 만들기-->
+                    <p class="sort_op2" id="op4" onclick="optionChange(this)">Descending order</p> 
                 </div>
             </form>
         </div>
     </div>
 
-    
-    
 </body>
 </html>

@@ -8,3 +8,4 @@ class Node():
         self.next = None
     def __str__(self):
         return f'name = {self.name} \naddr={self.addr}\ncur={self.cur}'
+

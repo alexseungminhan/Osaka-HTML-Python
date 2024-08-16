@@ -17,7 +17,7 @@
 
 + Filter Options—vegan, vegetarian friendly, gluten free.
 + Sort Data by raw ranking or number of reviews.
-+ Displays restaurant's name, address, and ranking/number of reviews after searching.
++ Display restaurant's name, address, and ranking/number of reviews after searching.
 
 #### How to Use
 
